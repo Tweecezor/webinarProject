@@ -17,8 +17,8 @@
 .menu__item--red {
   color: red;
 }
-.menu__item--green {
-  color: green;
+.menu__item--blue {
+  color: blue;
 }
 .menu__item:nth-child(3n) {
   margin-right: 0;
