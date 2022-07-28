@@ -1,0 +1,60 @@
+$width: 300px;
+
+$mainColor: #294f32;
+
+@function toRem($px) {
+	@return $px / 16px + 0rem;
+}
+
+@mixin item {
+	width: toRem(100px);
+	margin-right: 12px + 12px;
+	color: $mainColor;
+}
+
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+.menu {
+	width: $width;
+	&__list {
+		display: flex;
+		@include tablets {
+			display: none;
+		}
+	}
+
+	&__item {
+		// width: 100px;
+		// margin-right: 12px + 12px;
+		// color: $mainColor;
+
+		@include item;
+
+		&--red {
+			color: red;
+		}
+
+		&--green {
+			color: green;
+		}
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:before {
+			content: '124';
+			width: 40px;
+			height: 40px;
+			border: 1px solid red;
+		}
+	}
+}
